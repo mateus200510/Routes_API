@@ -1,4 +1,3 @@
-
 function sendJson(res, status, data) {
   res.writeHead(status, { "Content-Type": "application/json" });
   res.end(JSON.stringify(data));
@@ -17,17 +16,14 @@ function methodNotAllowed(res) {
   sendJson(res, 405, { erro: "Método HTTP não permitido para esta rota" });
 }
 
- req.on("end")
 function lerBody(req) {
   return new Promise(function(resolve, reject) {
     var corpo = "";
 
-    
     req.on("data", function(chunk) {
-      corpo = corpo + chunk;
+      corpo += chunk;
     });
 
-    
     req.on("end", function() {
       try {
         resolve(JSON.parse(corpo));
@@ -35,11 +31,15 @@ function lerBody(req) {
         reject(new Error("Body inválido: não é um JSON válido"));
       }
     });
+
+    req.on("error", function(erro) {
+      reject(erro);
+    });
   });
 }
 
-module.exports.sendJson         = sendJson;
-module.exports.sendHtml         = sendHtml;
-module.exports.notFound         = notFound;
+module.exports.sendJson = sendJson;
+module.exports.sendHtml = sendHtml;
+module.exports.notFound = notFound;
 module.exports.methodNotAllowed = methodNotAllowed;
-module.exports.lerBody          = lerBody;
+module.exports.lerBody = lerBody;
