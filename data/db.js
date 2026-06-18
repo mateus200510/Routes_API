@@ -3,11 +3,11 @@
 // ============================================================
 
 var alunos = [
-  { id: 1, nome: "Ana Souza",   turma: "3DS-A", curso: "Desenvolvimento de Sistemas" },
-  { id: 2, nome: "Bruno Lima",  turma: "3DS-A", curso: "Desenvolvimento de Sistemas" },
-  { id: 3, nome: "Carla Melo",  turma: "2DS-B", curso: "Desenvolvimento de Sistemas" },
-  { id: 4, nome: "Diego Rocha", turma: "2DS-B", curso: "Desenvolvimento de Sistemas" },
-  { id: 5, nome: "Elena Costa", turma: "1DS-C", curso: "Desenvolvimento de Sistemas" },
+  { id: 1, nome: "Mateus Perninha",   turma: "3DS-A", curso: "Desenvolvimento de Sistemas" },
+  { id: 2, nome: "Krenak",  turma: "2DS", curso: "Desenvolvimento de Sistemas" },
+  { id: 3, nome: "Glicerio",  turma: "2DS", curso: "Desenvolvimento de Sistemas" },
+  { id: 4, nome: "Zappala", turma: "2DS", curso: "Desenvolvimento de Sistemas" },
+  { id: 5, nome: "Fillier", turma: "2DS", curso: "Desenvolvimento de Sistemas" },
 ];
 
 var produtos = [

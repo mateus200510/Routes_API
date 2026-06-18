@@ -1,22 +1,16 @@
-// ============================================================
-// routes/alunos.js — CRUD de alunos (Exercícios 2, 3, 5, 6, 7)
-// ============================================================
+
 
 var db      = require("../data/db");
 var helpers = require("../helpers/response");
 
-// ── Exercício 2 ─────────────────────────────────────────────
-// GET /alunos  →  retorna todos os alunos em JSON
+
 function getAlunos(req, res) {
   helpers.sendJson(res, 200, db.alunos);
 }
 
-// ── Exercício 3 ─────────────────────────────────────────────
-// GET /alunos/:id  →  retorna um aluno pelo id, ou 404 se não existir
+
 function getAlunoPorId(req, res, url) {
-  // url = "/alunos/1"
-  // split("/") = ["", "alunos", "1"]
-  // posição [2] = "1"  →  Number("1") = 1
+  
   var partes = url.split("/");
   var id     = Number(partes[2]);
 

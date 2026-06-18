@@ -1,14 +1,7 @@
-// ============================================================
-// routes/base.js — Rotas gerais (Exercícios 1 e 9)
-// ============================================================
 
-// Importa o módulo helpers e guarda em uma variável
-// Assim acessamos cada função pelo nome: helpers.sendJson(), helpers.sendHtml()
 var helpers = require("../helpers/response");
 
-// ── Exercício 1 ─────────────────────────────────────────────
 
-// GET /  →  mensagem de boas-vindas
 function getRaiz(req, res) {
   helpers.sendJson(res, 200, {
     mensagem: "Bem-vindo ao servidor Node.js puro!",

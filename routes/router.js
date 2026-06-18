@@ -1,18 +1,11 @@
-// ============================================================
-// routes/router.js — Tabela de rotas e dispatcher (Ex. 8 e 10)
-// ============================================================
+
 
 var base    = require("./base");
 var alunos  = require("./alunos");
 var produtos = require("./produtos");
 var helpers = require("../helpers/response");
 
-// ── Tabela de rotas exatas ───────────────────────────────────
-// Cada caminho aponta para um objeto com os métodos aceitos.
-// Ex.: rotasExatas["/alunos"]["GET"] é a função getAlunos
-//
-// Exercício 10: se o CAMINHO existe mas o MÉTODO não → 405
-//               se o CAMINHO não existe → 404
+
 var rotasExatas = {
   "/": {
     GET: base.getRaiz,
