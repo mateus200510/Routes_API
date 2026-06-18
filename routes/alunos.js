@@ -1,5 +1,4 @@
 
-
 var db      = require("../data/db");
 var helpers = require("../helpers/response");
 
@@ -25,13 +24,11 @@ function getAlunoPorId(req, res, url) {
   helpers.sendJson(res, 200, aluno);
 }
 
-// ── Exercício 5 ─────────────────────────────────────────────
-// POST /alunos  →  cadastra novo aluno; exige os campos "nome" e "turma"
+//  Exercício
 async function createAluno(req, res) {
   try {
     var body = await helpers.lerBody(req);
 
-    // Verifica se os campos obrigatórios foram enviados
     if (!body.nome || !body.turma) {
       return helpers.sendJson(res, 400, {
         erro: 'Campos obrigatórios ausentes: "nome" e "turma" são necessários',
@@ -56,14 +53,12 @@ async function createAluno(req, res) {
   }
 }
 
-// ── Exercício 6 ─────────────────────────────────────────────
-// PUT /alunos/:id  →  atualiza os dados de um aluno pelo id
+// Exercício 6
 async function updateAluno(req, res, url) {
   try {
     var partes = url.split("/");
     var id     = Number(partes[2]);
 
-    // findIndex retorna a posição no array, ou -1 se não encontrar
     var index = db.alunos.findIndex(function(a) {
       return a.id === id;
     });
@@ -74,7 +69,6 @@ async function updateAluno(req, res, url) {
 
     var body = await helpers.lerBody(req);
 
-    // Atualiza só os campos que foram enviados no body
     if (body.nome)  db.alunos[index].nome  = body.nome;
     if (body.turma) db.alunos[index].turma = body.turma;
     if (body.curso) db.alunos[index].curso = body.curso;
@@ -88,8 +82,7 @@ async function updateAluno(req, res, url) {
   }
 }
 
-// ── Exercício 7 ─────────────────────────────────────────────
-// DELETE /alunos/:id  →  remove o aluno do array; retorna 204 ou 404
+//  Exercício 7 
 function deleteAluno(req, res, url) {
   var partes = url.split("/");
   var id     = Number(partes[2]);
@@ -102,10 +95,8 @@ function deleteAluno(req, res, url) {
     return helpers.sendJson(res, 404, { erro: "Aluno com id " + id + " não encontrado" });
   }
 
-  // splice(posição, quantos remover) — remove 1 elemento na posição encontrada
   db.alunos.splice(index, 1);
 
-  // 204 No Content — sucesso, mas sem corpo na resposta
   res.writeHead(204);
   res.end();
 }

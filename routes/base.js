@@ -4,21 +4,19 @@ var helpers = require("../helpers/response");
 
 function getRaiz(req, res) {
   helpers.sendJson(res, 200, {
-    mensagem: "Bem-vindo ao servidor Node.js puro!",
+    mensagem: "Bem-vindo ao meu servidor Rafael",
     dica: "Tente /sobre ou /status",
   });
 }
 
-// GET /sobre  →  informações sobre o servidor
 function getSobre(req, res) {
   helpers.sendJson(res, 200, {
-    mensagem: "Este servidor foi criado sem Express.",
+    mensagem: "Criado por Perninha.",
     tecnologia: "Node.js puro com módulo http",
     disciplina: "PW II - Desenvolvimento Web",
   });
 }
 
-// GET /status  →  estado atual do servidor
 function getStatus(req, res) {
   helpers.sendJson(res, 200, {
     status: "ativo",
@@ -27,9 +25,8 @@ function getStatus(req, res) {
   });
 }
 
-// ── Exercício 9 ─────────────────────────────────────────────
+//  Exercício 9 
 
-// GET /pagina  →  retorna uma página HTML (Content-Type: text/html)
 function getPagina(req, res) {
   var html = "<!DOCTYPE html>"
     + "<html lang='pt-BR'>"
@@ -56,8 +53,7 @@ function getPagina(req, res) {
   helpers.sendHtml(res, html);
 }
 
-// GET /api/status  →  retorna JSON (Content-Type: application/json)
-// Diferença do /pagina: o navegador recebe texto puro, não uma página formatada
+
 function getApiStatus(req, res) {
   helpers.sendJson(res, 200, {
     api: "online",

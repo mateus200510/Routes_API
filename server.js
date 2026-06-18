@@ -1,4 +1,3 @@
-// server.js — Ponto de entrada do servidor
 const http = require("http");
 const { handleRoutes } = require("./routes/router");
 
@@ -20,10 +19,8 @@ const routes = [
 ];
 
 const server = http.createServer(handleRoutes);
-
 server.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
-  console.log("--------------------------------------");
   console.log("Rotas disponíveis:");
   routes.forEach((route) => console.log("  " + route));
   console.log("--------------------------------------");

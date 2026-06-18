@@ -23,7 +23,6 @@ function getProdutos(req, res) {
       });
     }
   } else {
-    // Nenhuma categoria informada → devolve tudo
     resultado = db.produtos;
   }
 

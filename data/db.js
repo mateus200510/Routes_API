@@ -1,9 +1,7 @@
-// ============================================================
-// data/db.js — Dados em memória (simulando um banco de dados)
-// ============================================================
+
 
 var alunos = [
-  { id: 1, nome: "Mateus Perninha",   turma: "3DS-A", curso: "Desenvolvimento de Sistemas" },
+  { id: 1, nome: "Mateus Perninha",   turma: "2DS-A", curso: "Desenvolvimento de Sistemas" },
   { id: 2, nome: "Krenak",  turma: "2DS", curso: "Desenvolvimento de Sistemas" },
   { id: 3, nome: "Glicerio",  turma: "2DS", curso: "Desenvolvimento de Sistemas" },
   { id: 4, nome: "Zappala", turma: "2DS", curso: "Desenvolvimento de Sistemas" },
@@ -19,7 +17,6 @@ var produtos = [
   { id: 6, nome: "Caderno",      categoria: "papelaria", preco: 14.00 },
 ];
 
-// Contador usado para gerar IDs únicos ao cadastrar novos alunos
 var proximoId = 6;
 
 function getProximoId() {
