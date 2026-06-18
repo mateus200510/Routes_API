@@ -1,7 +1,7 @@
 
 
 var alunos = [
-  { id: 1, nome: "Mateus Perninha",   turma: "2DS-A", curso: "Desenvolvimento de Sistemas" },
+  { id: 1, nome: "Mateus Perninha",   turma: "2DS", curso: "Desenvolvimento de Sistemas" },
   { id: 2, nome: "Krenak",  turma: "2DS", curso: "Desenvolvimento de Sistemas" },
   { id: 3, nome: "Glicerio",  turma: "2DS", curso: "Desenvolvimento de Sistemas" },
   { id: 4, nome: "Zappala", turma: "2DS", curso: "Desenvolvimento de Sistemas" },
